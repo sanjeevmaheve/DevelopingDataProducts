@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Diamond Price Prediction in Singapore Dollars (SGD)</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Diamond Price Prediction in Singapore Dollars (SGD)">
+  <meta name="author" content="Sanjeev Kumar Maheve">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Diamond Price Prediction in Singapore Dollars (SGD)</h1>
+    <h2>Illustrating Prediction with Regression using Shiny</h2>
+    <p>Sanjeev Kumar Maheve<br/>Coursera Datascience Specialization Student</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>About the Shiny Application</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>The project analyzes the diamond data set from the &#39;UsingR&#39; package</li>
+<li>The data is diamond prices (in Singapore dollars) and diamond weight in carats (standard measure of diamond mass, 0.2 grams). Below is the output of library(UsingR); data(diamond)</li>
+</ul>
+
+<pre><code>##   carat price
+## 1  0.17   355
+## 2  0.16   328
+## 3  0.17   350
+## 4  0.18   325
+## 5  0.25   642
+## 6  0.16   342
+</code></pre>
+
+<ul>
+<li>The GOAL includes predicting the price of a diamond for the given carat input. Diamond carat weight is the measurement of how much a diamond weighs. A metric &quot;carat&quot; is defined as 200 milligrams.</li>
+</ul>
+
+<p>NOTE - The application may take few seconds to load completely, please wait...</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>How to use the Application</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Go to <a href="https://sanjeevmaheve.shinyapps.io/ddp-project-diamond-price-prediction/">https://sanjeevmaheve.shinyapps.io/ddp-project-diamond-price-prediction/</a> (The applicaton is hosted on the shinyapps.io server)</li>
+<li>The sidebar panel contains slider weiget to choose carat value with step size 0.05</li>
+<li>OR you can also choose any desired carat value by typing into text/drop-down box</li>
+<li>There is an option to enable/disable ggplot which shows/hides &quot;Plot of the diamond data with mass by carats&quot;</li>
+<li>Once the choice is made, the plot shows prediction value derived using linear regression</li>
+</ul>
+
+<pre><code class="r"># Lets estimate an expected dollar value increase in price for every carat 
+# increase in mass of diamond.
+fit &lt;- lm(price ~ carat, data = diamond)
+computePrice &lt;- function(desiredCaretVal) {
+  (coef(fit)[1] + coef(fit)[2] * desiredCaretVal)
+}
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Example Output</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Red and darkblue intersections show the linear regression based prediction output for carat value = 0.25 and 0.31 respectively</li>
+</ul>
+
+<p><img src="figure/unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='About the Shiny Application'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='How to use the Application'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Example Output'>
+         3
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
