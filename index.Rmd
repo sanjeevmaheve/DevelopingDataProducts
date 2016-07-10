@@ -69,3 +69,16 @@ g = g + geom_vline(xintercept = 0.31, colour="darkblue")
 g = g + geom_hline(yintercept = computePrice(0.31), colour="darkblue")
 g
 ```
+
+--- .class #id 
+
+## Reference Link(s)
+1. Reproducible Pitch Presentation
+
+   https://github.com/sanjeevmaheve/DevelopingDataProducts/tree/gh-pages
+2. My Shiny Application
+
+   https://github.com/sanjeevmaheve/DevelopingDataProducts/tree/gh-pages/ddp-project-diamond-price-prediction
+
+
+### Thank You

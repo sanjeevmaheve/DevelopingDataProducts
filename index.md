@@ -54,3 +54,16 @@ computePrice <- function(desiredCaretVal) {
 * Red and darkblue intersections show the linear regression based prediction output for carat value = 0.25 and 0.31 respectively
 
 ![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png)
+
+--- .class #id 
+
+## Reference Link(s)
+1. Reproducible Pitch Presentation
+
+   https://github.com/sanjeevmaheve/DevelopingDataProducts/tree/gh-pages
+2. My Shiny Application
+
+   https://github.com/sanjeevmaheve/DevelopingDataProducts/tree/gh-pages/ddp-project-diamond-price-prediction
+
+
+### Thank You
